@@ -1,0 +1,682 @@
+:root {
+  --color-primary: #00d9ff;
+  --color-secondary: #2584ff;
+  --color-accent: #ff3400;
+  --color-headings: #1b0760;
+  --color-body: #666276;
+  --color-body-darker: #5c5577;
+  --color-border: #ccc;
+  --border-radius: 30px;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+}
+* {
+  box-sizing: border-box;
+}
+
+/* Typography & Element Selector */
+
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  color: var(--color-body);
+  font-size: 2.4rem;
+  line-height: 1.5;
+}
+.outwrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fffeff;
+}
+h1 {
+  font-size: 40px;
+  color: black;
+  text-align: center;
+  margin: 60px 0 0 0;
+}
+h1,
+h2,
+h3 {
+  color: var(--color-headings);
+  line-height: 1;
+  margin-bottom: 1rem;
+  max-lines: 100;
+}
+.outwrapper > p {
+  max-lines: 100;
+  margin-top: 0;
+  font-size: 20px;
+  text-align: center;
+  margin: 0 0 20px 0;
+}
+
+span {
+  color: black;
+  font-weight: 500;
+}
+
+@media screen and (min-width: 1024px) {
+  body {
+    font-size: 1.8rem;
+  }
+  h2 {
+    font-size: 4rem;
+  }
+  h3 {
+    font-size: 2.4rem;
+  }
+  .outwrapper > h1 {
+    font-size: 40px;
+    color: black;
+    text-align: center;
+    margin: 100px 0 0 0;
+  }
+  .outwrapper > p {
+    max-lines: 100;
+    margin-top: 0;
+    font-size: 2.4rem;
+    text-align: center;
+    margin: 0 0 20px 0;
+  }
+}
+
+/* BUTTONS ............ */
+
+.btn--outline {
+  width: 100%;
+  font-size: 18px;
+  background-color: #fff;
+  padding: 20px;
+  border: 2px solid black;
+  border-radius: 30px;
+  font-weight: 600;
+  margin: 10px 0;
+  text-transform: uppercase;
+}
+.btn--outline:hover {
+  background-color: black;
+  color: white;
+}
+.btn--accent {
+  font-size: 18px;
+  color: #fff;
+  background-color: #ff3400;
+  border-radius: 40px;
+  /* margin: 10px 0px; */
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: center;
+  border: 0;
+}
+.header--btn {
+  padding: 20px 60px;
+}
+
+/* BADGES FOR PLANS... */
+
+.badge {
+  width: auto;
+  height: fit-content;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 5px 15px;
+  border-radius: 20px;
+  color: white;
+  text-transform: uppercase;
+}
+.badge--primary {
+  background-color: #02cdf1;
+}
+.badge--secondary {
+  background-color: #126de4;
+}
+.badge--popular {
+  background-color: black;
+  width: 110px;
+  height: 30px;
+  display: block;
+  margin: 0;
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  clip-path: polygon(0 0, 100% 0, 85% 50%, 100% 100%, 0% 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px 0 0;
+  position: absolute;
+  text-transform: uppercase;
+  transform: rotate(90deg);
+  right: 10px;
+  top: 40px;
+}
+
+/*  GRID  & flex section SECTION ...................... */
+
+.grid--2x1 {
+  display: grid;
+  grid-template: repeat(2, auto) / auto;
+  gap: 20px;
+}
+.grid--3x1 {
+  display: grid;
+  grid-template: repeat(3, auto) / 100%;
+  gap: 8rem 4rem;
+  justify-items: center;
+}
+.grid--3x2 {
+  display: grid;
+  grid-template: repeat(3, 6rem) / repeat(2, 1fr);
+  justify-items: center;
+}
+
+@media screen and (min-width: 768px) {
+  .grid--2x1 {
+    grid-template: auto / repeat(2, 1fr);
+    gap: 20px;
+  }
+  .grid--3x2 {
+    grid-template: auto / repeat(6, 1fr);
+  }
+}
+@media screen and (min-width: 1024px) {
+  .grid--3x1 {
+    grid-template: auto / repeat(3, 1fr);
+    max-width: 700px;
+  }
+}
+
+/* ICON CONTAINER ...........  */
+.icon--container {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+.icon--white {
+  background-color: #f3f9fa;
+}
+.icon--accent {
+  background-color: var(--color-accent);
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  position: absolute;
+  top: 30px;
+  right: -32px;
+}
+.icon {
+  width: 40px;
+  height: 40px;
+}
+.icon--background {
+  background-color: white;
+  width: auto;
+  height: fit-content;
+  border-radius: 35%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px;
+  margin-top: 10px;
+}
+.icon--quote {
+  width: 30px;
+  height: 25.92px;
+}
+
+/* LINK ARROW ............... */
+
+.link--arrow {
+  color: #ff3400;
+  font-size: 20px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 700;
+}
+.link--arrow::after {
+  content: "-->";
+  color: #ff3400;
+  position: relative;
+  margin-left: 5px;
+}
+.link--arrow:hover::after {
+  margin-left: 10px;
+}
+
+@media screen and (min-width: 1024px) {
+  .link--arrow {
+    font-size: 15px;
+  }
+}
+
+/* CONTROL CONTENT   */
+
+.control--content {
+  width: 100%;
+  display: flex;
+  background-color: black;
+  flex: 1 1 100%;
+}
+.control__heading {
+  font-size: 28px;
+  color: white;
+  margin: 0px 0px 10px;
+  max-lines: 100;
+  line-height: 1.4;
+}
+.control__description {
+  font-size: 20px;
+  color: #7b858b;
+  margin: 0px 0px 20px;
+}
+.control__bundle {
+  padding: 0 20px;
+}
+
+/* NAVIGATION SECTION.................. */
+
+.nav--bar {
+  background-color: #000;
+  width: 100%;
+  border: 1px solid white;
+  padding: 10px;
+  height: 67.15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+.nav__item {
+  font-size: 16px;
+  color: #d2d0db;
+  padding: 0 20px;
+  text-decoration: none;
+}
+.nav__items {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+}
+.nav__chevron {
+  width: 30%;
+  height: 30%;
+}
+
+@media screen and (max-width: 768px) {
+}
+
+/* HEADER SECTION EDIT  & DON'T DO THE GRID DISPLAY AS I HAVE PROVIDED
+        SEPARTE CLASS FOR GRID DISPLAY */
+
+.hero--section {
+  width: 100%;
+  background-color: black;
+  box-sizing: content-box;
+  padding: 0 0 60px 0;
+  clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+  display: flex;
+  justify-content: center;
+}
+.header--section {
+  width: 100%;
+}
+.header__left div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.header__left h1 {
+  text-align: center;
+  font-size: 60px;
+  color: white;
+}
+.header__left p {
+  text-align: center;
+  color: #b9c3cf;
+  font-size: 20px;
+  margin: 20px 0 20px;
+}
+.header__btn {
+  padding: 20px 60px;
+}
+.header__right > img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+@media screen and (min-width: 768px) {
+  .header--section {
+    max-height: 623px;
+    margin: 0 20px;
+    max-width: 1140px;
+  }
+  .header__left {
+    display: flex;
+    align-items: center;
+  }
+  .header__left > div {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .header__left h1 {
+    text-align: start;
+  }
+  .header__left p {
+    text-align: start;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .header__left h1 {
+    font-size: 80px;
+  }
+}
+
+/* FEATURE SECTION EDIT  & DON'T DO THE GRID DISPLAY AS I HAVE PROVIDED
+        SEPARTE CLASS FOR GRID DISPLAY */
+
+.feature--section {
+  padding: 0 20px;
+  margin: 40px 0;
+  align-self: center;
+}
+.feature__left {
+  width: 100%;
+}
+.feature__heading {
+  font-size: 28px;
+  color: black;
+  margin: 10px 0;
+}
+.feature__description {
+  font-size: 20px;
+  padding: 0 0 20px;
+}
+.feature__img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.feature__right {
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .feature--section {
+    max-width: 1100px;
+    max-height: 370px;
+    margin: 30px 0;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .feature__left {
+    width: auto;
+  }
+  .feature__right {
+    width: auto;
+  }
+  .feature__heading {
+    font-size: 24px;
+  }
+  .feature__description {
+    font-size: 18px;
+  }
+}
+
+/* CONTROL PANEL SECTION EDIT  & DON'T DO THE GRID DISPLAY AS I HAVE PROVIDED
+        SEPARATE CLASS FOR GRID DISPLAY */
+
+.control--panel--section {
+  background-color: #000;
+  width: 100%;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 95%);
+  padding: 60px 20px 90px;
+  display: flex;
+  flex-direction: column;
+  flex-basis: 1 1 100%;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.control__img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.control__list {
+  list-style: none;
+}
+.control__list--items {
+  margin: 30px 0;
+}
+.control--panel__heading {
+  text-align: center;
+  color: white;
+  font-size: 40px;
+  max-lines: 100;
+  font-weight: bolder;
+  padding: 10px 0 20px;
+}
+@media screen and (min-width: 768px) {
+  .control--section {
+    max-width: 1140px;
+  }
+}
+
+/* TESTIMONIAL SECTION  EDIT  & DON'T DO THE GRID DISPLAY AS I HAVE PROVIDED
+        SEPARATE CLASS FOR GRID DISPLAY */
+
+.testimonial--section {
+  background-color: white;
+  width: 95%;
+  padding: 30px;
+  margin: 50px 20px 20px 50px;
+  box-shadow: 0 0 20px 10px #f3f3f3;
+}
+.testimonial__left {
+  position: relative;
+}
+.testimonial__img {
+  width: 100%;
+  height: 90%;
+  margin-left: auto;
+  object-fit: contain;
+}
+.testimonial__quote {
+  font-size: 24px;
+  margin: 0px 0px 22px;
+  color: #5c5577;
+  line-height: 1.3;
+  letter-spacing: 1.3px;
+}
+.testimonial__quote::before,
+.testimonial__quote::after {
+  content: '"';
+}
+.testimonial__author {
+  font-size: 20px;
+  font-weight: 100;
+  margin: 0;
+}
+.testimonial__company {
+  font-size: 15px;
+  color: #1b0760;
+  opacity: 50%;
+}
+.quote__line {
+  width: 40px;
+  height: 2px;
+}
+.testimonial__author--citation {
+  display: flex;
+  align-items: center;
+}
+.testimonial__author--citation div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 0 0 20px;
+}
+@media screen and (min-width: 768px) {
+  .testimonial--section {
+    max-width: 1140px;
+  }
+  .testimonial__img {
+    width: 100%;
+    height: 100%;
+  }
+  .testimonial__right {
+    padding: 50px 0 0 60px;
+  }
+  .testimonial__author {
+    font-size: 24px;
+  }
+  .testimonial__company {
+    font-size: 16px;
+  }
+  .testimonial__quote {
+    font-size: 21.6px;
+  }
+}
+
+/* PLAN SECTION  EDIT  & DON'T DO THE GRID DISPLAY AS I HAVE PROVIDED
+        SEPARATE CLASS FOR GRID DISPLAY */
+
+.plan--section {
+  width: 100%;
+  padding: 0 20px;
+  margin: 100px 0 0 0;
+}
+.plan__item {
+  width: 100%;
+  height: 100%;
+  max-width: 500px;
+  box-shadow: 0 0 20px 10px #f3f3f3;
+  max-width: 520px;
+  border-radius: 10px;
+  margin-top: 20px;
+  max-width: 490px;
+  box-sizing: border-box;
+}
+.plan__item:hover {
+  transform: scale(1.05);
+  transition: all 0.1s ease-in-out;
+}
+.plan__item--popular {
+  transform: scale(1.1);
+}
+.plan__item--popular:hover {
+  transform: scale(1.2);
+  transition: all 0.2s linear;
+}
+.plan__head--primary {
+  background-color: var(--color-primary);
+  padding: 20px 35px;
+  border-radius: 10px 10px 0 0;
+  position: relative;
+}
+.plan__head--secondary {
+  position: relative;
+  background-color: var(--color-secondary);
+  padding: 20px 35px;
+  border-radius: 10px 10px 0 0;
+}
+.plan__foot {
+  background-color: white;
+  padding: 20px 35px;
+}
+.plan__name {
+  color: white;
+  font-size: 24px;
+}
+.plan__price {
+  color: white;
+  font-size: 50px;
+}
+.plan__billing--cycle {
+  color: white;
+  font-size: 20px;
+  opacity: 75%;
+  margin: 0 10px 0 0;
+}
+.plan__description {
+  color: white;
+  font-size: 20px;
+  display: block;
+}
+.plan__list--item::before {
+  content: "\003C";
+  color: var(--color-primary);
+  width: 20px;
+  height: 20px;
+  margin: 0 10px 0 0;
+}
+.plan__list--item {
+  margin: 0 0 20px;
+  padding: 0 0 0 5px;
+  color: black;
+  font-size: 20px;
+}
+.plan__list {
+  list-style: none;
+}
+
+@media screen and (min-width: 1024px) {
+  .plan--section {
+    max-width: 1140px;
+  }
+}
+
+/* SEARCH SECTION ... */
+
+.search--section {
+  max-width: 1100px;
+}
+.search__search {
+  width: auto;
+  background: transparent;
+  height: 70px;
+  padding: 15px 20px;
+  outline: none;
+  border: 0;
+  font-size: 2rem;
+}
+.search__search--box {
+  width: 100%;
+  background-color: white;
+  max-width: 670px;
+  box-shadow: 0 0 20px 10px #e3e1e1;
+  border-radius: 30px;
+  display: flex;
+  justify-content: space-between;
+  flex: 1 1 100%;
+  margin: 40px auto;
+}
+.search__search--btn > img {
+  width: 20px;
+  height: 20px;
+  margin: 0 10px 0 0;
+}
+.search__search--btn {
+  padding: 20px 20.544px;
+  margin: 4px;
+}
+.search__foot {
+  margin-top: 40px;
+}
